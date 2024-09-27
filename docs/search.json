@@ -5,5 +5,19 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tom Gibbens-Matsuyama",
+    "section": "",
+    "text": "Hi everyone! I’m Tom. Welcome to my github page! I am an early career data scientist earning my master of environmental data science through the Bren school at UCSB. I am eager to kickstart my career! Besides school, I love to hike, bodysurf, golf, play pickleball, and more. Check out my work!"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Tom Gibbens-Matsuyama",
+    "section": "Education:",
+    "text": "Education:\nBachelors of Science in marine biology University of Hawaii at Manoa\nMaster of Environmental Data Science University of California, Santa Barbara"
   }
 ]
