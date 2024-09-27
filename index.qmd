@@ -16,7 +16,7 @@ about:
 
 Hi everyone! I’m Tom. Welcome to my github page! I am an early career data scientist earning my master of environmental data science through the Bren school at UCSB. I am eager to kickstart my career! Besides school, I love to hike, bodysurf, golf, play pickleball, and more. Check out my work! 
 
-## Education:
+## Education: Yurp
 
 Bachelors of Science in marine biology
 University of Hawaii at Manoa
