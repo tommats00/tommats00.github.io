@@ -49,7 +49,7 @@ In December of 2017, one of California's largest wildfires burned over 280,000 a
 -   Use `pandas` to read in tabular data
 -   Use `rioxarray` and `geopandas` to read in spatial data
 -   Read data from a link and local source
--   Filter and transform vector data types with `pandas`
+-   Filter and transform tabular data types with `pandas`
 -   Filter and transform spatial data with `rioxarray` and `geopandas`
 -   Visualize filtered AQI data
 -   Visualize filtered landsat and boundary data
@@ -58,26 +58,16 @@ In December of 2017, one of California's largest wildfires burned over 280,000 a
 
 #### AQI Data
 
-[AQI data](https://www.airnow.gov/aqi/aqi-basics/) from the [US Environmental Protection Agency (EPA)](https://www.epa.gov/) will be used to visualize the impact of the 2017 Thomas Fire in Santa Barabra County. This data comes from the [pre-generated data files](https://aqs.epa.gov/aqsweb/airdata/download_files.html). These files are updated twice a year, once in June to capture the entire previous year and once in December to capture the Summer.
+[AQI data](https://www.airnow.gov/aqi/aqi-basics/) from the [US Environmental Protection Agency (EPA)](https://www.epa.gov/) will be used to visualize the impact of the 2017 Thomas Fire in Santa Barbara County. This data comes from these [pre-generated data files](https://aqs.epa.gov/aqsweb/airdata/download_files.html). These files are updated twice a year, once in June to capture the entire previous year and once in December to capture the Summer.
 
 #### Landsat Collection 2 Level-2 data from Landsat 8
 
-This dataset is a collection of bands from the Landsat Collection 2 Level-2 collected by the Landsat 8 satellite. This data was taken from the [Microsof Planetary Computer data catalogue](https://planetarycomputer.microsoft.com/dataset/landsat-c2-l2) and pre-processed for our use.
+This dataset is a collection of bands from the Landsat Collection 2 Level-2 collected by the Landsat 8 satellite. This data was taken from the [Microsoft Planetary Computer data catalogue](https://planetarycomputer.microsoft.com/dataset/landsat-c2-l2) and pre-processed for our use.
 
 #### California Fire Perimeters
 
 The second dataset is a pre-processed geospatial data frame from [Data.gov](https://catalog.data.gov/dataset/california-fire-perimeters-all-b3436). This dataset contains the Thomas Fire perimeter data.
 
-#### References & data sources
-
-AQI Data: Available from: \[(https://aqs.epa.gov/aqsweb/airdata/download_files.html#AQI.)\] Access date: October 23, 2024
-
-Microsoft Planetary Computer Data Catalogue, Landsat collection 2 Level-2. Available from: \[(https://planetarycomputer.microsoft.com/dataset/landsat-c2-l2.)\] Access date: November 19, 2024.
-
-Data.gov Data Catalogue, California Fire Perimeters (all). Available from: \[(https://catalog.data.gov/dataset/california-fire-perimeters-all-b3436.)\] Access date: November 19, 2024.
-
-#### Ackowledgements
-Materials created by [Carmen Galaz-Garcia](https://github.com/carmengg) for EDS-220: [Working with Environmental Data](https://meds-eds-220.github.io/MEDS-eds-220-course/)
 
 ### Load libraries
 
@@ -116,7 +106,7 @@ perimeters = gpd.read_file('data/California_Fire_Perimeters/California_Fire_Peri
 
 #### Preliminary Exploration
 
-When working with any type of data, the first thing we should do is some preliminary exploration. Since the AQI is a tabular dataset, we can use methods such as `head` and `info` for both of our dataframes. This is a great way of viewing our data if you have no other indication of the type of data you are working with.
+When working with any type of data, the first thing we should do is some preliminary exploration. Since the AQI is a tabular dataset, we can use methods such as `head` and `info` for both of our dataframes. This is a great way of viewing our data if you have no other indication of the type you are working with.
 
 ```{python}
 # Print head for 2017 AQI
@@ -130,7 +120,7 @@ aqi_18.head(3)
 
 ## Data cleaning
 
-Now that we have done some prelimnary exploration of our data, we have an idea of what we are working with. Now, we can clean the data for best practices and filter down to answer our question. Going back to our purpose, we want to visualize the impact of the 2017 Thomas Fire on the AQI in Santa Barbara county. To visualize this question, we want to filter down to columns AQI and Date.
+Now that we have done some preliminary exploration of our data, we have an idea of what we are working with. Now, we can clean the data for best practices and filter down to answer our question. Going back to our purpose, we want to visualize the impact of the 2017 Thomas Fire on the AQI in Santa Barbara county. To visualize this question, we want to filter down to columns AQI and Date.
 
 ```{python}
 #| code-fold: true
@@ -160,25 +150,30 @@ aqi_sb = aqi_sb.set_index('date')
 
 ## AQI Data Analysis and Visualization
 
-The data is now prepped to be plotted, but our plot would only in how AQI has changed over time. It would be intersting to add another line to our plot to add some more information. We can add a "five day average" by using the `rolling` method. - The `rolling` method computes a moving average - `5D` as our argument indicates a 5 day moving average - Providing `mean` after `rolling` indicates that we want the mean every 5 days
+The data is now prepped to be plotted, but our plot would only result in how AQI has changed over time. It would be interesting to include another line to our plot that adds more information. We can add a "five day average" by using the `rolling` method. 
+
+- The `rolling` method computes a moving average 
+- `5D` as our argument indicates a 5 day moving average 
+- Providing `mean` after `rolling` indicates that we want the mean every 5 days
 
 ```{python}
 # Create a five day rolling average column of AQI
 aqi_sb['five_day_average'] = aqi_sb['aqi'].rolling('5D').mean()
 ```
 
-Our data is now ready to be plotted. Let's plot over AQI and five day average over time
+Our data is now ready to be plotted. Let's plot our AQI and five day average over time
 
 ```{python}
 #| code-fold: true
 #| code-summary: Show the code
 
-# Initialize empyt figure and axis
+# Initialize empty figure and axis
 fig, ax = plt.subplots()
 
-# Plot a df on the ax axis
+# Plot a df on the axis
 aqi_sb.plot(ax=ax)
 
+# Set axis and title names 
 ax.set_title('AQI value and its five day average from 2017-2018 in Santa Barbara County')
 ax.set_xlabel('Date')
 ax.set_ylabel('Air Quality Index (AQI) Value')
@@ -190,7 +185,7 @@ plt.legend(labels = ['AQI', 'Five Day Average'])
 plt.show()
 ```
 
-Our plot shows a huge spike in both our AQI and five day average. We know this is from the 2017 Thomas Fire. From [Airnow's](https://www.airnow.gov/aqi/aqi-basics/) AQI, we know that healthy, moderate, and unhealthy values range from 0-50, 51-100, and 150-200 respectively. During the 2017 Thomas Fire we see an AQI value reaching over 300 which is the highest level of concern. Values of 300 or more translate to emergency health conditions, where everyone is more than likely to be affected. 
+Our plot shows a huge spike in both our AQI and five day average during the 2017 Thomas Fire. From [Airnow's](https://www.airnow.gov/aqi/aqi-basics/) AQI, we know that healthy, moderate, and unhealthy values range from 0-50, 51-100, and 150-200 respectively. During the 2017 Thomas Fire we see an AQI value reaching over 300 which is the highest level of concern. Values of 300 or more translate to emergency health conditions, where everyone is more than likely to be affected. 
 
 ## Landsat and Fire Perimeter Data
 
@@ -283,8 +278,6 @@ landsat[['swir22', 'nir08', 'red']].to_array().plot.imshow(robust = True)
 
 We want to combine our Thomas Fire perimeter with our landsat plot to help us visualize where the fire boundary is. The CRSs are both `EPSG:3857` so they should be able to plot with one another without any problems. The first thing we need to do is assign a variable name to our false color image that we created above. Then, we can plot both maps together.
 
-Let's use the Thomas Fire perimeter that we created in the other notebook and add it to the false color image. This will give us an indication of where exactly to look when viewing the map. Remember, when working with spatial data, it is imperative to use the same CRS when comparing data. We know from before that our Thomas Fire data has a CRS of `EPSG:3857`, so let's use this as our base CRS.
-
 ```{python}
 #| code-fold: true
 #| code-summary: Show the code
@@ -326,5 +319,15 @@ plt.show()
 
 This false color image does a great job of identifying the burned area from the 2017 Thomas Fire, as indicated in red. Having the Thomas Fire boundary layered over top of the image depicts the burned area even more. Remote sensing has become an important part of detecting, monitoring, and acting on wildfire outbreaks. This is just one example of the power that can be harnessed from satellite data.
 
-This workflow depicts the area burned and the dramatic increase of PM 2.5 in air quality during the 2017 Thomas Fire.
+This workflow depicts the area burned and the dramatic increase of PM 2.5 in air quality during the 2017 Thomas Fire. Visualizing the burn scar and API reminds us of the devastating affects those in Ventura and Santa Barbara counties faced in 2017. 
 
+## References & data sources
+
+AQI Data: Available from: (https://aqs.epa.gov/aqsweb/airdata/download_files.html#AQI.) Access date: October 23, 2024
+
+Microsoft Planetary Computer Data Catalogue, Landsat collection 2 Level-2. Available from: (https://planetarycomputer.microsoft.com/dataset/landsat-c2-l2.) Access date: November 19, 2024.
+
+Data.gov Data Catalogue, California Fire Perimeters (all). Available from: (https://catalog.data.gov/dataset/california-fire-perimeters-all-b3436.) Access date: November 19, 2024.
+
+#### Ackowledgements
+Materials created by [Carmen Galaz-Garcia](https://github.com/carmengg) for EDS-220: [Working with Environmental Data](https://meds-eds-220.github.io/MEDS-eds-220-course/)
