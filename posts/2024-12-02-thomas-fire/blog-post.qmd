@@ -274,7 +274,7 @@ To do so we need to change the type of bands that we are plotting. We want to se
 landsat[['swir22', 'nir08', 'red']].to_array().plot.imshow(robust = True)
 ```
 
-## Step 6: Add the Thomas Fire perimeter to our false color image
+## Add the Thomas Fire perimeter to our false color image
 
 We want to combine our Thomas Fire perimeter with our landsat plot to help us visualize where the fire boundary is. The CRSs are both `EPSG:3857` so they should be able to plot with one another without any problems. The first thing we need to do is assign a variable name to our false color image that we created above. Then, we can plot both maps together.
 
