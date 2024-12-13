@@ -1,5 +1,6 @@
 ---
 title: "Water Quality Analysis"
+description: "Investigating how water pH has changed over time and space in California"
 author:
   - name: Tom Gibbens-Matsuyama
     url: https://tommats00/
