@@ -32,8 +32,6 @@ execute:
 
 Author: Tom Gibbens-Matsuyama (tommats00\@github.io)
 
--   This repository contains the rest of my analysis [github repository](https://github.com/tommats00/eds220-final)
-
 <img src="https://camo.githubusercontent.com/eb96c7e74feb1cad555d796e03bf71e25a4f38058ba619e1e4da5c6a8d86330d/68747470733a2f2f7777772e6c6965666663616272617365722e636f6d2f77702d636f6e74656e742f75706c6f6164732f77696c64666972652d736c6964652d3530302e6a7067" alt="Thomas Fire 2017">
 
 Image Credits: Carsten Shertzer \| Getty Images
@@ -52,7 +50,7 @@ In December of 2017, one of California's largest wildfires burned over 280,000 a
 -   Filter and transform tabular data types with `pandas`
 -   Filter and transform spatial data with `rioxarray` and `geopandas`
 -   Visualize filtered AQI data
--   Visualize filtered landsat and boundary data
+-   Visualize filtered Landsat and perimeter data
 
 ## Dataset descriptions:
 
@@ -219,10 +217,10 @@ thomas_perimeter = perimeters[(perimeters['fire_name'] == 'THOMAS')
 
 ### Landsat exploration
 
-The landsat data was read in using `open_rasterio` from the `rioxarray` package. The format of this information is different from the `DataFrame` and `GeoSpatialDataFrame` we have seen in the past. We do not need to use any exploratory methods such as `head` and `info`. All of the information is contained within the array. We just need to call the variable to view it. Let's take a look.
+The Landsat data was read in using `open_rasterio` from the `rioxarray` package. The format of this information is different from the `DataFrame` and `GeoSpatialDataFrame` we have seen in the past. We do not need to use any exploratory methods such as `head` and `info`. All of the information is contained within the array. We just need to call the variable to view it. Let's take a look.
 
 ```{python}
-# View the dataframe
+# View the array
 landsat
 ```
 
@@ -243,18 +241,17 @@ landsat = landsat.drop_vars('band')
 # The code `squeeze` drops dimensions with values of 1 
 landsat = landsat.squeeze()
 
-# Check our array to confirm that `band` has been 
-# removed from the dimensions and coordinates
+# Confirm `band` has been removed
 landsat
 ```
 
-Whenever you are working with spatial data, you always want the CRSs to be the same. Otherwise, the spatial data won't be able to communicate properly with one another. We know that the Thomas Fire is projected to EPSG:3857. Let's reproject our landsat data to the same CRS.
+Whenever you are working with spatial data, you always want the CRSs to be the same. Otherwise, the spatial data won't be able to communicate properly with one another. We know that the Thomas Fire is projected to EPSG:3857. Let's reproject our Landsat data to the same CRS.
 
 ```{python}
 #| code-fold: true
 #| code-summary: Show the code
 
-# Reproject our landsat data to EPSG:3857
+# Reproject our Landsat data to EPSG:3857
 landsat = landsat.rio.reproject("EPSG:3857")
 
 # Check to see if the CRSs are the same
@@ -276,7 +273,7 @@ landsat[['swir22', 'nir08', 'red']].to_array().plot.imshow(robust = True)
 
 ## Add the Thomas Fire perimeter to our false color image
 
-We want to combine our Thomas Fire perimeter with our landsat plot to help us visualize where the fire boundary is. The CRSs are both `EPSG:3857` so they should be able to plot with one another without any problems. The first thing we need to do is assign a variable name to our false color image that we created above. Then, we can plot both maps together.
+We want to combine our Thomas Fire perimeter with our Landsat plot to help us visualize where the fire boundary is. The CRSs are both `EPSG:3857` so they should be able to plot with one another without any problems. The first thing we need to do is assign a variable name to our false color image that we created above. Then, we can plot both maps together.
 
 ```{python}
 #| code-fold: true
@@ -331,3 +328,4 @@ Data.gov Data Catalogue, California Fire Perimeters (all). Available from: (http
 
 #### Ackowledgements
 Materials created by [Carmen Galaz-Garcia](https://github.com/carmengg) for EDS-220: [Working with Environmental Data](https://meds-eds-220.github.io/MEDS-eds-220-course/)
+
