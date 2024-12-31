@@ -2,9 +2,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Me",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "I am currently in the fall quarter at UCSB taking R and Python coding classes. These classes include EDS223-GeoSpatial Analysis, EDS222-Stats for EDS, EDS220-Environmental Data, EDS 242-Ethics Bias for EDS, and EDS296-Data science tools for building a professional online portfolio (thanks Sam!. At the same time, I am TAing for a life science statistics course (PSTAT5LS). It is my first time teaching students, so it was a little nerve racking in the beginning, but I have enjoyed my time so far. Teaching is not only fun, but it also has further developed my understanding of the fundamentals of statistics."
   },
   {
     "objectID": "index.html",
@@ -159,5 +159,19 @@
     "title": "Water Quality Analysis",
     "section": "References",
     "text": "References\nDavid, I., Busuioic, G. 2017. Assessment of interaction between pH and different forms of CO2 from naturally underground water used for drinking in Gorgota. Annals. Food Science and Technology. (18): 13-26.\nDewangan, S.K., Shrivastava, S.K., Tigga, V., Lakra, M. 2007. Review paper on the role of pH in water quality implications for aquatic life, human health, and environmental sustainability. International Advanced Research Journal in Science, Engineering and Technology. (10): 215-218. doi: 10.17148/IARJSET.2023.10633\nEbi, K.L., J.M. Balbus, G. Luber, A. Bole, A. Crimmins, G. Glass, S. Saha, M.M. Shimamoto, J. Trtanj & J.L. White-Newsome. 2018. Human health. In: Impacts, risks, and adaptation in the United States: Fourth national climate assessment, volume II [Reidmiller, D.R., C.W. Avery, D.R. Easterling, K.E. Kunkel, K.L.M. Lewis, T.K. Maycock, and B.C. Stewart (eds.)]. U.S. Global Change Research Program, Washington, DC, pp. 544, 551–552. doi: 10.7930/NCA4.2018.CH14\nIPCC (Intergovernmental Panel on Climate Change). 2021. Climate change 2021: The physical science basis. Working Group I contribution to the IPCC Sixth Assessment Report. Cambridge, United Kingdom: Cambridge University Press. www.ipcc.ch/assessment-report/ar6\nJohnson T, Butcher J, Santell S, Schwartz S, Julius S, LeDuc S. 2022. A review of climate change effects on practices for mitigating water quality impacts. J Water Clim Chang. 2022 Mar 22;13:1684-1705. doi: 10.2166/wcc.2022.363."
+  },
+  {
+    "objectID": "about.html#what-am-i-up-to",
+    "href": "about.html#what-am-i-up-to",
+    "title": "About Me",
+    "section": "",
+    "text": "I am currently in the fall quarter at UCSB taking R and Python coding classes. These classes include EDS223-GeoSpatial Analysis, EDS222-Stats for EDS, EDS220-Environmental Data, EDS 242-Ethics Bias for EDS, and EDS296-Data science tools for building a professional online portfolio (thanks Sam!. At the same time, I am TAing for a life science statistics course (PSTAT5LS). It is my first time teaching students, so it was a little nerve racking in the beginning, but I have enjoyed my time so far. Teaching is not only fun, but it also has further developed my understanding of the fundamentals of statistics."
+  },
+  {
+    "objectID": "about.html#a-little-more-about-me",
+    "href": "about.html#a-little-more-about-me",
+    "title": "About Me",
+    "section": "A little more about me",
+    "text": "A little more about me\nI am a Southern California local, as I was born and raised in Ventura. Growing up I had many little boys’ dream of becoming a professional baseball player, but was later hit with the realization of the difficulty to do so! Luckily, I had a love for the ocean, which led me to studying marine biology at the University of Hawaiʻi at Mānoa. I was introduced to the power of programming languages during my time there and wanted to explore more. Fortunately, this led me to discover the newly founded MEDS program at UCSB. I am thrilled to be a part of the 4th cohort this program has to offer. I love the relationships I have forged and can’t wait for what this school year has to offer!"
   }
 ]
