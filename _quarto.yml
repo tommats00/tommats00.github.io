@@ -3,15 +3,24 @@ project:
   output-dir: docs
 
 website:
-  title: "tommats00.github.io"
+  title: "Tom Gibbens-Matsuyama"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - posts.qmd
+      - href: about.qmd
+        text: About
+      - href: posts.qmd
+        text: Posts
       - href: resources.qmd
         text: Resources
+  page-footer:
+    background: light # or `dark`
+    left: Copyright 2024, Tom Gibbens-Matsuyama
+    right: This website is built with {{< fa heart title="a heart" >}}, [{{< fa brands github title="GitHub octocat logo" >}}](https://github.com/tommats00/tommats00.github.io){target=_blank}, [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html){target=_blank} and [Quarto](https://quarto.org/){target=_blank}
+
+   
+
 
 format:
   html:
