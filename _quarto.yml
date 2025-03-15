@@ -9,7 +9,7 @@ website:
       - href: index.qmd
         text: Home
       - href: about.qmd
-        text: About
+        text: About Me
       - href: posts.qmd
         text: Posts
       - href: resources.qmd
@@ -24,9 +24,7 @@ website:
 
 format:
   html:
-    theme: 
-      light: minty
-      dark: solar
+    theme: styles.scss
     css: styles.css
     toc: true
     page-layout: full

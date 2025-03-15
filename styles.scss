@@ -1,0 +1,17 @@
+/*-- scss:defaults --*/
+
+// Color
+$Forest: #687864;
+$Darker-Blue: #31708E;
+$Mid-Blue: #5085A5;
+$Sky-Blue: #8FC1E3;
+$White: #F7F9FB;
+
+// Base document colors
+$navbar-bg: $White; // navbar
+$navbar-fg: $Darker-Blue; // navbar foreground elements
+$navbar-hl: $Forest; // highlight color when hovering over navbar links
+$body-bg: $Darker-Blue; // page background 
+$body-color: $White; // page text 
+$footer-bg: $Mid-Blue; // footer 
+$link-color: $White; // hyperlinks 
