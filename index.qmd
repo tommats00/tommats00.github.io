@@ -20,6 +20,6 @@ about:
       target: _blank
 ---
 
-Hi there! My name is Tom and I am currently a graduate student in UC Santa Barbara's Master of Environmental Data Science (MEDS) program. I am interested in marine ecology and fisheries management and aim to use the skills I gain in this program to promote sustainable practices and develop innovative solutions in these fields. Outside of school, I enjoy all the activities that Southern California has to offer, such as hiking, surfing, fishing, and being in the sun!
+Hi there! My name is Tom and I am currently a Masters of Environmental Data Science (MEDS) student at the Bren School of Environmental Science & Management. I am passionate about marine ecology and fisheries management, and I am eager to explore data-driven solutions across a variety of environmental fields through the skills I gain in this program. Outside of school, I enjoy all the activities that Southern California has to offer, such as hiking, surfing, fishing, and being in the sun!
 
 
