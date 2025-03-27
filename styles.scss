@@ -6,12 +6,14 @@ $Darker-Blue: #31708E;
 $Mid-Blue: #5085A5;
 $Sky-Blue: #8FC1E3;
 $White: #F7F9FB;
+$Grey: #D3D3D3;
+$Black: #000000;
 
 // Base document colors
-$navbar-bg: $White; // navbar
-$navbar-fg: $Darker-Blue; // navbar foreground elements
+$navbar-bg: $Darker-Blue; // navbar
+$navbar-fg: $Sky-Blue; // navbar foreground elements
 $navbar-hl: $Forest; // highlight color when hovering over navbar links
-$body-bg: $Darker-Blue; // page background 
-$body-color: $White; // page text 
+$body-bg: $Grey; // page background 
+$body-color: $Black; // page text 
 $footer-bg: $Mid-Blue; // footer 
 $link-color: $White; // hyperlinks 
