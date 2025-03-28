@@ -11,7 +11,7 @@ categories:
   - Water
   - R
   - MEDS
-  - Statistics
+  - Infographic
 format: html
 editor: visual
 execute: 
